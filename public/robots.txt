@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gaming-center-6f91acd8.zappy5.app/sitemap.xml

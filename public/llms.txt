@@ -1,0 +1,85 @@
+# Gaming Center — Generative Engine Optimization Map
+
+> A טכנולוגיה וגיימינג business.
+
+---
+
+## Pages
+
+### Home
+https://gaming-center-6f91acd8.zappy5.app
+
+### Tech Showcase
+https://gaming-center-6f91acd8.zappy5.app/tech
+
+### VR Lounge
+https://gaming-center-6f91acd8.zappy5.app/vr
+
+### Contact
+https://gaming-center-6f91acd8.zappy5.app/contact
+
+### Products
+https://gaming-center-6f91acd8.zappy5.app/products
+המוצרים שלנו - Gaming Center
+
+### Cart
+https://gaming-center-6f91acd8.zappy5.app/cart
+עגלת הקניות שלך
+
+### Checkout
+https://gaming-center-6f91acd8.zappy5.app/checkout
+תשלום
+
+### Login
+https://gaming-center-6f91acd8.zappy5.app/login
+התחברות לקוחות
+
+### Account
+https://gaming-center-6f91acd8.zappy5.app/account
+החשבון שלי
+
+### Order Success
+https://gaming-center-6f91acd8.zappy5.app/order-success
+תודה על ההזמנה
+
+### Product Detail
+https://gaming-center-6f91acd8.zappy5.app/product/:slug
+פרטי המוצר - Gaming Center
+
+### Category
+https://gaming-center-6f91acd8.zappy5.app/category/:slug
+מוצרים - Gaming Center
+
+## Legal & Policy
+
+### Privacy Policy
+https://gaming-center-6f91acd8.zappy5.app/privacy
+Information about how user data is collected, stored, and protected.
+
+### Terms & Conditions
+https://gaming-center-6f91acd8.zappy5.app/terms
+Legal terms describing service usage, rights, and policies.
+
+### Accessibility Statement
+https://gaming-center-6f91acd8.zappy5.app/accessibility
+Information about WCAG compliance and accessibility features.
+
+---
+
+# Business Context (for LLM understanding)
+
+## About Gaming Center
+Gaming Center is a business in the טכנולוגיה וגיימינג industry.
+
+## Target Audience
+לקוחות שרוצים לקנות מחשבים, קונסולות, VR ומשחקים
+
+## Industry
+טכנולוגיה וגיימינג
+
+---
+
+# Additional Resources
+
+- **Sitemap**: https://gaming-center-6f91acd8.zappy5.app/sitemap.xml
+- **Robots.txt**: https://gaming-center-6f91acd8.zappy5.app/robots.txt
