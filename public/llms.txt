@@ -1,85 +1,79 @@
-# Gaming Center — Generative Engine Optimization Map
-
-> A טכנולוגיה וגיימינג business.
+# Business — Generative Engine Optimization Map
 
 ---
 
 ## Pages
 
 ### Home
-https://gaming-center-6f91acd8.zappy5.app
+https://example.com
 
 ### Tech Showcase
-https://gaming-center-6f91acd8.zappy5.app/tech
+https://example.com/tech
 
 ### VR Lounge
-https://gaming-center-6f91acd8.zappy5.app/vr
+https://example.com/vr
 
 ### Contact
-https://gaming-center-6f91acd8.zappy5.app/contact
+https://example.com/contact
 
 ### Products
-https://gaming-center-6f91acd8.zappy5.app/products
+https://example.com/products
 המוצרים שלנו - Gaming Center
 
 ### Cart
-https://gaming-center-6f91acd8.zappy5.app/cart
+https://example.com/cart
 עגלת הקניות שלך
 
 ### Checkout
-https://gaming-center-6f91acd8.zappy5.app/checkout
+https://example.com/checkout
 תשלום
 
 ### Login
-https://gaming-center-6f91acd8.zappy5.app/login
+https://example.com/login
 התחברות לקוחות
 
 ### Account
-https://gaming-center-6f91acd8.zappy5.app/account
+https://example.com/account
 החשבון שלי
 
 ### Order Success
-https://gaming-center-6f91acd8.zappy5.app/order-success
+https://example.com/order-success
 תודה על ההזמנה
 
 ### Product Detail
-https://gaming-center-6f91acd8.zappy5.app/product/:slug
+https://example.com/product/:slug
 פרטי המוצר - Gaming Center
 
 ### Category
-https://gaming-center-6f91acd8.zappy5.app/category/:slug
+https://example.com/category/:slug
 מוצרים - Gaming Center
+
+### Thank You | Gaming Center
+https://example.com/thank-you
+Gaming Center - Thank You | Gaming Center
 
 ## Legal & Policy
 
 ### Privacy Policy
-https://gaming-center-6f91acd8.zappy5.app/privacy
+https://example.com/privacy
 Information about how user data is collected, stored, and protected.
 
 ### Terms & Conditions
-https://gaming-center-6f91acd8.zappy5.app/terms
+https://example.com/terms
 Legal terms describing service usage, rights, and policies.
 
 ### Accessibility Statement
-https://gaming-center-6f91acd8.zappy5.app/accessibility
+https://example.com/accessibility
 Information about WCAG compliance and accessibility features.
 
 ---
 
 # Business Context (for LLM understanding)
 
-## About Gaming Center
-Gaming Center is a business in the טכנולוגיה וגיימינג industry.
-
-## Target Audience
-לקוחות שרוצים לקנות מחשבים, קונסולות, VR ומשחקים
-
-## Industry
-טכנולוגיה וגיימינג
-
+## About Business
 ---
 
 # Additional Resources
 
-- **Sitemap**: https://gaming-center-6f91acd8.zappy5.app/sitemap.xml
-- **Robots.txt**: https://gaming-center-6f91acd8.zappy5.app/robots.txt
+- **Sitemap**: https://example.com/sitemap.xml
+- **Robots.txt**: https://example.com/robots.txt

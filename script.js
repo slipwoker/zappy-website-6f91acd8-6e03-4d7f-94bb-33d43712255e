@@ -3927,6 +3927,29 @@ window.onload = function() {
     }
 })();
 
+// Mobile search submit button handler
+(function() {
+  var btn = document.getElementById('mobile-search-submit');
+  if (btn) {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      var input = document.getElementById('mobile-search-input');
+      if (input && input.value.trim().length >= 2) {
+        var query = input.value.trim();
+        var isPreview = window.location.pathname.includes('preview-fullscreen');
+        if (isPreview) {
+          var url = new URL(window.location.href);
+          url.searchParams.set('page', '/products');
+          url.searchParams.set('search', query);
+          window.location.href = url.toString();
+        } else {
+          window.location.href = '/products?search=' + encodeURIComponent(query);
+        }
+      }
+    });
+  }
+})();
+
 
 /* ZAPPY_PUBLISHED_LIGHTBOX_RUNTIME */
 (function(){
