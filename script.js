@@ -585,6 +585,8 @@ window.onload = function() {
 ;
 
 ;
+
+;
 /* ==ZAPPY E-COMMERCE JS START== */
 // E-commerce functionality
 (function() {
@@ -2322,6 +2324,36 @@ function stripHtmlToText(html) {
     // Make close function globally available
     window.zappyCloseMobileMenu = closeMobileMenu;
   }
+
+  // Some templates toggle the menu but don't toggle the button icon state.
+  // Keep #mobileToggle in sync with #navMenu so hamburger ↔ X works.
+  function syncMobileToggleWithMenu() {
+    try {
+      const toggle = document.getElementById('mobileToggle') || document.querySelector('.mobile-toggle');
+      const menu = document.getElementById('navMenu') || document.querySelector('.nav-menu');
+      if (!toggle || !menu) return;
+
+      const apply = function() {
+        const menuOpen = menu.classList.contains('active') || menu.classList.contains('open') || menu.classList.contains('show');
+        if (menuOpen) toggle.classList.add('active');
+        else toggle.classList.remove('active');
+      };
+
+      apply();
+
+      const obs = new MutationObserver(function(mutations) {
+        for (var i = 0; i < mutations.length; i++) {
+          if (mutations[i].attributeName === 'class') {
+            apply();
+            break;
+          }
+        }
+      });
+      obs.observe(menu, { attributes: true });
+    } catch (e) {
+      // no-op
+    }
+  }
   
   // Initialize cart drawer events
   function initCartDrawer() {
@@ -3480,6 +3512,7 @@ function stripHtmlToText(html) {
     initSearch();
     initMobileSearch();
     initMobileMenuHandling();
+    syncMobileToggleWithMenu();
     initMobileCategoriesSubmenu();
     initCartDrawer();
     initCheckout();
