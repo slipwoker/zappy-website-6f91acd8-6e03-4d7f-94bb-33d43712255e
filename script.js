@@ -587,6 +587,8 @@ window.onload = function() {
 ;
 
 ;
+
+;
 /* ==ZAPPY E-COMMERCE JS START== */
 // E-commerce functionality
 (function() {
@@ -4228,15 +4230,54 @@ async function loadCategoryPage() {
   console.log('Loading category with slug:', slug);
   
   try {
-    const res = await fetch(buildApiUrlWithLang('/api/ecommerce/storefront/categories/' + encodeURIComponent(slug) + '?websiteId=' + websiteId));
-    const data = await res.json();
-    
-    if (!data.success || !data.data) {
-      showCategoryNotFound(categorySection, t);
-      return;
+    // Prefer the dedicated category endpoint (includes products), but fall back to:
+    // 1) GET /storefront/categories and match by slug/id
+    // 2) GET /storefront/products?categoryId=...
+    // This makes deployed sites work even if the API server is older and lacks /categories/:slug.
+    let category = null;
+
+    try {
+      const res = await fetch(buildApiUrlWithLang('/api/ecommerce/storefront/categories/' + encodeURIComponent(slug) + '?websiteId=' + websiteId));
+      if (res && res.ok) {
+        const data = await res.json();
+        if (data && data.success && data.data) {
+          category = data.data;
+        }
+      }
+    } catch (e1) {
+      // ignore - will fall back
     }
-    
-    const category = data.data;
+
+    if (!category) {
+      const listRes = await fetch(buildApiUrlWithLang('/api/ecommerce/storefront/categories?websiteId=' + websiteId));
+      if (!listRes || !listRes.ok) {
+        showCategoryNotFound(categorySection, t);
+        return;
+      }
+      const listData = await listRes.json();
+      const categories = (listData && listData.success && Array.isArray(listData.data)) ? listData.data : [];
+      category = categories.find(function(c) {
+        return c && (c.slug === slug || c.id === slug);
+      }) || null;
+
+      if (!category) {
+        showCategoryNotFound(categorySection, t);
+        return;
+      }
+
+      // Fetch products for this category
+      try {
+        const prodRes = await fetch(buildApiUrlWithLang('/api/ecommerce/storefront/products?websiteId=' + websiteId + '&categoryId=' + encodeURIComponent(category.id)));
+        if (prodRes && prodRes.ok) {
+          const prodData = await prodRes.json();
+          const products = (prodData && prodData.success && Array.isArray(prodData.data)) ? prodData.data : [];
+          category = { ...category, products };
+        }
+      } catch (e2) {
+        category = { ...category, products: [] };
+      }
+    }
+
     renderCategoryPage(categorySection, category, t);
     
     // Update page title and meta
