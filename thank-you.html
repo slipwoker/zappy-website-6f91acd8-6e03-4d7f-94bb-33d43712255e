@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="he" dir="rtl"><head>
+<!DOCTYPE html><html lang="he" dir="rtl" data-zappy-site-type="ecommerce"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thank You | Gaming Center</title>
@@ -907,7 +907,42 @@
     margin-left: auto;
     margin-right: auto;
   }
-}</style><!-- Zappy Analytics -->
+}</style><style>
+/* Announcement Bar Styles */
+.zappy-announcement-bar {
+  background-color: #f50aab;
+  color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  box-sizing: border-box;
+  z-index: 1001;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.zappy-announcement-bar .zappy-announcement-message {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  width: 100%;
+  left: 0;
+  right: 0;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.zappy-announcement-bar .zappy-announcement-message.active {
+  opacity: 1;
+}</style>
+<!-- Zappy Analytics -->
 <script>
 (function() {
   'use strict';
@@ -1153,6 +1188,7 @@
     </style>
 </head>
 <body>
+<div class="zappy-announcement-bar"><span class="zappy-announcement-message active">test message</span></div>
 
 <!-- Zappy Attribution Header -->
 <div id="zappy-attribution-header" class="zappy-header" style="display: none;">
