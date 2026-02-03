@@ -1,4 +1,6 @@
-# Business — Generative Engine Optimization Map
+# Gaming Center — Generative Engine Optimization Map
+
+> A טכנולוגיה וגיימינג business.
 
 ---
 
@@ -70,7 +72,15 @@ Information about WCAG compliance and accessibility features.
 
 # Business Context (for LLM understanding)
 
-## About Business
+## About Gaming Center
+Gaming Center is a business in the טכנולוגיה וגיימינג industry.
+
+## Target Audience
+לקוחות שרוצים לקנות מחשבים, קונסולות, VR ומשחקים
+
+## Industry
+טכנולוגיה וגיימינג
+
 ---
 
 # Additional Resources
