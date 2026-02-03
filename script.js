@@ -581,6 +581,10 @@ window.onload = function() {
 ;
 
 ;
+
+;
+
+;
 /* ==ZAPPY E-COMMERCE JS START== */
 // E-commerce functionality
 (function() {
@@ -2369,6 +2373,25 @@ function stripHtmlToText(html) {
     
     if (!toggleBtn || !panel) return;
 
+    function computeTotalHeaderHeightPx() {
+      try {
+        // Prefer CSS var set by setupFixedHeaders()
+        const totalVar = getComputedStyle(document.documentElement).getPropertyValue('--total-header-height').trim();
+        if (totalVar) {
+          const n = parseFloat(totalVar);
+          if (Number.isFinite(n) && n > 0) return Math.ceil(n);
+        }
+      } catch (e) {}
+
+      // Fallback: compute from DOM
+      const announcementBar = document.querySelector('.zappy-announcement-bar');
+      const navbar = document.querySelector('nav.navbar, .navbar');
+      const barH = announcementBar ? Math.ceil(announcementBar.getBoundingClientRect().height) : 0;
+      const navH = navbar ? Math.ceil(navbar.getBoundingClientRect().height) : 0;
+      const total = barH + navH;
+      return total > 0 ? total : 112;
+    }
+
     // Ensure the mobile search panel has a submit button (older pages may only have input + close)
     (function ensureSearchSubmitButton() {
       try {
@@ -2395,6 +2418,11 @@ function stripHtmlToText(html) {
     toggleBtn.addEventListener('click', function(e) {
       e.preventDefault();
       e.stopPropagation();
+      // Ensure panel is positioned below announcement+navbar even if CSS forces --header-height
+      try {
+        const topPx = computeTotalHeaderHeightPx();
+        panel.style.setProperty('top', topPx + 'px', 'important');
+      } catch (e2) {}
       panel.classList.add('active');
       setTimeout(function() {
         if (input) input.focus();
